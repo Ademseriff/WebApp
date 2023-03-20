@@ -19,5 +19,7 @@ namespace WebApp.Models
 
         public DbSet<Admin> admins { get; set; }
 
+        public DbSet<Arac> aracs { get; set; }
+
     }
 }

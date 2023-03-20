@@ -28,6 +28,18 @@ namespace WebApp.Controllers
            var cx= contex.admins.ToList();
             return View(cx);
         }
+        //[HttpPost]
+        //public IActionResult Delete(int id)
+        //{
+
+        //    var cx = contex.admins.Find(id);
+        //    contex.admins.Remove(cx);
+        //    contex.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
+
+
+
         [HttpGet]
         public IActionResult AdminEkle()
         {

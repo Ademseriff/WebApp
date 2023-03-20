@@ -11,7 +11,7 @@
             <th scope="col">Admin Id</th>
             <th scope="col">Admin Ad </th>
             <th scope="col">Admin Şifre</th>
-           
+            <th scope="col">Admin Sil</th>
         </tr>
     </thead>
     <tbody ">
@@ -21,7 +21,9 @@
                 <th scope="row">@Model[i].AdminId</th>
                 <td>@Model[i].AdminName</td>
                 <td>@Model[i].AdminSifre</td>
+                @*<a asp-controller="Home" asp-action="Delete" asp-route-id="@Model[i].AdminId></a>*@
             </tr>
+           
         }
         
     </tbody>
