@@ -18,5 +18,17 @@ namespace WebApp.Controllers
             return View(cx);
            
         }
+        [HttpGet]
+        public IActionResult AracEkle()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AracEkle(Arac arac)
+        {
+            contex.aracs.Add(arac);
+            contex.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
