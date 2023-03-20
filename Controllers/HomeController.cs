@@ -11,16 +11,22 @@ namespace WebApp.Controllers
 {
     public class HomeController : Controller
     {
+        
+
         private readonly ILogger<HomeController> _logger;
 
+        Contex contex;
         public HomeController(ILogger<HomeController> logger)
         {
+             contex = new Contex();
             _logger = logger;
         }
 
         public IActionResult Index()
         {
-            return View();
+
+           var cx= contex.admins.ToList();
+            return View(cx);
         }
 
         public IActionResult Privacy()
