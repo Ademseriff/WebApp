@@ -21,12 +21,27 @@ namespace WebApp.Controllers
              contex = new Contex();
             _logger = logger;
         }
-
+        //burası ana sayfa burda adminleri listeleme yaptım.
         public IActionResult Index()
         {
 
            var cx= contex.admins.ToList();
             return View(cx);
+        }
+        [HttpGet]
+        public IActionResult AdminEkle()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AdminEkle(Admin admin)
+        {
+            
+            contex.admins.Add(admin);
+            contex.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         public IActionResult Privacy()
