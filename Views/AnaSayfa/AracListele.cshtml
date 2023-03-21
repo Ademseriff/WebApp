@@ -1,26 +1,50 @@
-﻿
+﻿@using WebApp.Models
+@model List<Arac>
+
 @{
     ViewData["Title"] = "AracListele";
     Layout = "";
 }
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">ARAC LİSTEM</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" asp-action="Index" asp-controller="AnaSayfa">Ana Sayfa<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br />
+<br />
 <table class="table table-dark">
     <thead>
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">ArabaId</th>
+         
             <th scope="col">ArabaMarka</th>
             <th scope="col">Araba Model </th>
             <th scope="col">Araba FİYAT </th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-           
-        </tr>
+        
+        @foreach (var item in Model)
+        {
+            var deneme = ViewBag.AracMarka;
+            if (item.AracMarka.Equals(deneme))
+            {
+                <tr>
+                    <th scope="row">@item.AracMarka</th>
+                    <td>@item.AracModel</td>
+                    <td>@item.AracFiyat</td>
+                </tr>
+            }
+        }
        
     </tbody>
 </table>

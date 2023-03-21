@@ -26,7 +26,9 @@ namespace WebApp.Controllers
             {
                 if (cx[i].AracMarka.Equals(arac.AracMarka))
                 {
-                    return View("AracListele");
+                    ViewBag.AracMarka = arac.AracMarka;
+                    
+                    return View("AracListele",cx);
                 }
 
             }
