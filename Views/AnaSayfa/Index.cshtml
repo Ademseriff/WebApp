@@ -1,4 +1,5 @@
 ﻿@using WebApp.Models
+@model Arac
 @{
     Layout = "";
 }
@@ -31,9 +32,9 @@
             <h6>100000 TL BAŞLAYAN FİYATLAR</h6>
             
             <hr>
-            <form action="/action_page.php" target="_blank">
+            <form method="post" asp-action="Index" asp-controller="AnaSayfa">
                 <p><label><i class="fa fa-car"></i> ARAÇ MARKASI GİRİNİZ</label></p>
-                <input class="w3-input w3-border" type="text" placeholder="Marka İSMİ" name="CheckIn" required>
+                <input class="w3-input w3-border" type="text" placeholder="Marka İSMİ" asp-for="AracMarka" required>
                
                 <p><button class="w3-button w3-block w3-green w3-left-align" type="submit"><i class="fa fa-search w3-margin-right"></i> ARAÇLARI ARA </button></p>
             </form>
