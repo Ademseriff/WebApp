@@ -43,7 +43,8 @@
                     <th scope="row">@item.AracMarka</th>
                     <td>@item.AracModel</td>
                     <td>@item.AracFiyat</td>
-                    <td><input class="btn alert-success" type="submit" value="SATIN AL "></td>
+                    <td><a class="btn alert-success" value="SATIN AL " asp-action="Index" asp-controller="SatinAlma" asp-route-id="@item.AracId" ></a></td>
+                      
                 </tr>
             }
         }
