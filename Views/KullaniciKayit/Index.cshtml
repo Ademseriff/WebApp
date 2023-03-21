@@ -1,0 +1,50 @@
+﻿@using WebApp.Models
+@model User
+@{
+    Layout = "";
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Kayıt Ol</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" asp-action="Index" asp-controller="AnaSayfa">Ana Sayfa<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br />
+<br />
+
+<form method="post" asp-controller="KullaniciKayit" asp-action="Index">
+    <div style="margin:80px">
+          <div style="margin:auto">
+            <input type="text" class="form-control" placeholder="Adınız" style="text-align:center" asp-for="KullaniciAd">
+         </div>
+         <br />
+        <div style="margin:auto">
+            <input type="text" class="form-control" placeholder="Soyadınız" style="text-align:center" asp-for="KullaniciSoyad">
+        </div>
+        <br />
+        <div style="margin:auto">
+            <input type="text" class="form-control" placeholder="T.C KİMLİK NUMARASI" style="text-align:center" asp-for="KullaniciTc" >
+        </div>
+        <br />
+        <div style="margin:auto">
+            <input type="text" class="form-control" placeholder="İL VEYA İLÇE" style="text-align:center" asp-for="KullaniciIl">
+        </div>
+        <br />
+        <div style="margin:auto">
+        <button type="submit" class="btn btn-primary" >Kayıt OL</button>
+        </div>
+    </div>
+
+    
+</form>

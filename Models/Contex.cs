@@ -21,5 +21,7 @@ namespace WebApp.Models
 
         public DbSet<Arac> aracs { get; set; }
 
+        public DbSet<User> users { get; set; }
+
     }
 }

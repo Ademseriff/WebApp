@@ -40,9 +40,11 @@
             </form>
         </div>
         <div class="w3-bar-block">
-            <a href="#apartment" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-building"></i> Apartment</a>
-            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-16" onclick="document.getElementById('subscribe').style.display='block'"><i class="fa fa-rss"></i> ÜYE OL </a>
-            <a href="#contact" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-envelope"></i> Contact</a>
+            <a href="#apartment" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-building"></i> Araçalarımız </a>
+            <a asp-action="Index" asp-controller="KullaniciKayit" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-user-plus"></i>Kayıt olun</a>
+            <a asp-action="Index" asp-controller="Login" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-sign-in"></i> Admin Giriş</a>
+            <a href="#contact" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-envelope"></i> Bize Yazın</a>
+            
         </div>
     </nav>
 
@@ -115,7 +117,7 @@
             </form>
         </div>
 
-        <footer class="w3-container w3-padding-16" style="margin-top:32px">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></footer>
+        <footer class="w3-container w3-padding-16" style="margin-top:32px;text-align:center">Tüm Haklarımız Saklıdır. <a href="https://www.egm.gov.tr/"  class="w3-hover-text-green">metin için tıklayınız.</a></footer>
 
         <!-- End page content -->
     </div>

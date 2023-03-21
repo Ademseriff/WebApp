@@ -1,0 +1,32 @@
+﻿@model List<User>
+@{
+    ViewData["Title"] = "Kullanici";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Kullanıcı Tc</th>
+            <th scope="col">KUllanıcı Ad </th>
+            <th scope="col">KUllanıcı Soyad</th>
+            <th scope="col">KUllanıcı İl</th>
+        </tr>
+    </thead>
+    <tbody ">
+    @for (int i = 0; i < Model.Count; i++)
+    {
+            <tr>
+                <td>@Model[i].KullaniciTc</td>
+                <th >@Model[i].KullaniciAd</th>
+                <td>@Model[i].KullaniciSoyad</td>
+                <td>@Model[i].KullaniciIl</td>
+            @*<a asp-controller="Home" asp-action="Delete" asp-route-id="@Model[i].AdminId></a>*@
+            </tr>
+
+    }
+
+    </tbody>
+</table>
+
+
