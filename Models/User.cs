@@ -14,5 +14,7 @@ namespace WebApp.Models
         public string KullaniciTc { get; set; }
         [Required]
         public string KullaniciIl { get; set; }
+
+        public string KullaniciPara { get; set; }
     }
 }
