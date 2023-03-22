@@ -9,6 +9,8 @@ namespace WebApp.Models
         [Required]
         public string KullaniciAd { get; set; }
         [Required]
+        public string KullaniciSifre { get; set; }
+        [Required]
         public string KullaniciSoyad { get; set; }
         [Required]
         public string KullaniciTc { get; set; }

@@ -78,6 +78,7 @@
     </style>
   </head>
   <body>
+      <div style="padding:70px">
     <h2 style="text-align: center">Admin Giriş Form</h2>
 
     <form asp-controller="Login" asp-action="Index" method="post">
@@ -99,12 +100,14 @@
 
             <div class="form-group">
                 <label for="AdminSifre">ŞİFRENİZ</label>
-                <input type="text" class="form-control" placeholder="Admin Şifre" asp-for="AdminSifre">
+                <input type="password" class="form-control" placeholder="Admin Şifre" asp-for="AdminSifre">
             </div>
 
-        <button type="submit" >Login</button>
+        <button type="submit" >Giriş Yap</button>
       </div>
     </form>
+        <a asp-controller="AnaSayfa" asp-action="Index" ><button type="submit" style="background-color:brown  " >ANA SAYFA</button></a>
+    </div>
   </body>
 </html>
 

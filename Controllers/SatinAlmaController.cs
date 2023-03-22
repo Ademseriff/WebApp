@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using WebApp.Models;
 
 namespace WebApp.Controllers
@@ -10,6 +11,7 @@ namespace WebApp.Controllers
     {
         Contex contex;
         Arac arac;
+        public static int aracId;
         public SatinAlmaController()
         {
 
@@ -21,6 +23,7 @@ namespace WebApp.Controllers
         public IActionResult Index(int id)
         {
             arac = contex.aracs.Find(id);
+            aracId = arac.AracId;
             return View();
         }
         [HttpPost]
@@ -29,16 +32,32 @@ namespace WebApp.Controllers
             var cx = contex.users.ToList();
             for (int i = 0; i < cx.Count; i++)
             {
-                if (cx[i].KullaniciAd.Equals(user.KullaniciAd))
+                if (cx[i].KullaniciAd.Equals(user.KullaniciAd) && cx[i].KullaniciSifre.Equals(user.KullaniciSifre))
                 {
-                   int KullaniciPara = Convert.ToInt32(cx[i].KullaniciPara);
-                   int AracPara = Convert.ToInt32(arac.AracFiyat);
+                    user.KullaniciSoyad = cx[i].KullaniciSoyad;
+                    user.KullaniciTc = cx[i].KullaniciTc;
+                    user.KullaniciIl = cx[i].KullaniciIl;
+                    int KullaniciPara = Convert.ToInt32(cx[i].KullaniciPara);
+                    arac = contex.aracs.Find(aracId);
+                   
+                    int AracPara = Convert.ToInt32(arac.AracFiyat);
                     if (KullaniciPara > AracPara)
                     {
-                        return RedirectToAction("Index", "AnaSayfa");
+                        int KalanPara = KullaniciPara - AracPara;
+                        user.KullaniciPara = KalanPara.ToString();
+                        contex.users.Update(user);
+                        contex.aracs.Remove(arac);
+                        contex.users.Remove(cx[i]);
+                        contex.SaveChanges();
+                        return RedirectToAction("Index", "ThankYou");
+                    }
+                    else if(KullaniciPara < AracPara)
+                    {
+                        
+                        return RedirectToAction("Index", "Eror");
                     }
 
-                    return View();
+                 //   return View();
                 }
             }
             return View();
