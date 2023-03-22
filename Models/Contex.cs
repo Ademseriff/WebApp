@@ -23,5 +23,7 @@ namespace WebApp.Models
 
         public DbSet<User> users { get; set; }
 
+        public DbSet<Form> forms { get; set; }
+
     }
 }
