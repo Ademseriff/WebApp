@@ -35,7 +35,7 @@
         nav {
             float: left;
             width: 70%;
-            height: 500px; /* only for demonstration, should be removed */
+            height: 550px; /* only for demonstration, should be removed */
             background: #ccc;
             padding: 20px;
         }
@@ -51,7 +51,7 @@
             padding: 20px;
             width: 30%;
             background-color: #f1f1f1;
-            height: 500px; /* only for demonstration, should be removed */
+            height: 550px; /* only for demonstration, should be removed */
         }
 
         /* Clear floats after the columns */
@@ -82,17 +82,22 @@
     <section>
         <nav>
             <div style="padding:60px">
+                <h3 style="text-align:center">ARAÇ SATIN AL </h3>
             <form method="post" asp-action="Index" asp-controller="AnaSayfa">
                 <p><label><i class="fa fa-car"></i> ARAÇ MARKASI GİRİNİZ</label></p>
-                <input class="w3-input w3-border" type="text" placeholder="Marka İSMİ" asp-for="KullaniciTc" required>
+                <input class="w3-input w3-border" type="text" placeholder="Marka İSMİ" form="AracMarka" required>
 
-                <p><button class="w3-button w3-block w3-green w3-left-align" type="submit"><i class="fa fa-search w3-margin-right"></i> ARAÇLARI ARA </button></p>
+                <p><button class="w3-button w3-block w3-green w3-left-align" type="submit"><i class="fa fa-search w3-margin-right" ></i> ARAÇLARI ARA </button></p>
             </form>
+            </div>
+            <div>
+               <h3 style="text-align:center">ARAÇLARIM</h3>
+                <a asp-controller="KullaniciAracListele" asp-action="Index">   <p style="padding-right:60px;padding-left:60px"><button class="w3-button w3-block w3-green w3-left-align" type="submit"><i class="fa fa-search w3-margin-right"></i> GÖRÜNTÜLE</button></p></a>
             </div>
         </nav>
 
         <article>
-
+         <div style="padding:unset">
             <h1>Yaşadığınız İl</h1>
             <p>
                 @Model.KullaniciIl
@@ -111,7 +116,11 @@
             <p>
               @Model.KullaniciPara TL
             </p>
-           
+            
+            <p style="color:cornflowerblue">
+                    <a asp-action="Index" asp-controller="AnaSayfa" class="w3-bar-item w3-button w3-padding-16"> <i class="fa fa-sign-in" style="color:brown"></i> Çıkış Yap</a>
+            </p>
+            </div>
         </article>
     </section>
 

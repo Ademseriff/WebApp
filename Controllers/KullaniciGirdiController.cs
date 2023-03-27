@@ -7,6 +7,9 @@ namespace WebApp.Controllers
     {
         public IActionResult Index(User user)
         {
+            TempData["KulaniciAd"]  = user.KullaniciAd;
+            TempData["Sifre"] = user.KullaniciSifre;
+            
             return View(user);
         }
     }

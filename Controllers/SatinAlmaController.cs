@@ -11,12 +11,15 @@ namespace WebApp.Controllers
     {
         Contex contex;
         Arac arac;
+        AracAlindi aracAlindi;
         public static int aracId;
         public SatinAlmaController()
         {
 
             contex = new Contex();
             arac = new Arac();
+            aracAlindi = new AracAlindi();
+
 
         }
         [HttpGet]
@@ -45,6 +48,11 @@ namespace WebApp.Controllers
                     {
                         int KalanPara = KullaniciPara - AracPara;
                         user.KullaniciPara = KalanPara.ToString();
+                        aracAlindi.AracMarka= arac.AracMarka;
+                        aracAlindi.AracModel = arac.AracModel;
+                        aracAlindi.KullaniciAd=user.KullaniciAd;
+                        aracAlindi.KullaniciSifre= user.KullaniciSifre;
+                        contex.AracAlindis.Add(aracAlindi);
                         contex.users.Update(user);
                         contex.aracs.Remove(arac);
                         contex.users.Remove(cx[i]);

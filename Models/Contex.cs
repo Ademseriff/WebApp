@@ -25,5 +25,6 @@ namespace WebApp.Models
 
         public DbSet<Form> forms { get; set; }
 
+        public DbSet<AracAlindi> AracAlindis { get; set; }
     }
 }
