@@ -55,6 +55,12 @@ namespace WebApp.Controllers
             contex.SaveChanges();
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public IActionResult KullanicilarArac()
+        {
+           var cx= contex.AracAlindis.ToList();
+            return View(cx);
+        }
 
         public IActionResult Privacy()
         {

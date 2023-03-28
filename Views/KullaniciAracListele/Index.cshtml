@@ -1,50 +1,49 @@
-﻿
-@using WebApp.Models
+﻿@using WebApp.Models
 @model List<AracAlindi>
 @{
     Layout = "";
 }
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <style>
-    body{
+    body
+    {
         background-image: url(../../wwwroot/AnaSayfa/img/arabaArkaPlan.jpg);
-        background-repeat:no-repeat;
-    
+        background-repeat: no-repeat;
     }
 </style>
 <table class="table table-dark">
     <thead>
-        <tr >
+        <tr>
 
             <th scope="col">-------</th>
             <th scope="col">Araç Marka</th>
             <th scope="col">Araç Model </th>
             <th scope="col">-------</th>
-            
+
 
         </tr>
     </thead>
-    <tbody ">
+    <tbody >
 
 
     @foreach (var item in Model)
     {
         var ad = TempData["KulaniciAd"];
         var sifre = TempData["Sifre"];
-     
-        
+
+
         if (item.KullaniciSifre.Equals(sifre) && item.KullaniciAd.Equals(ad))
-        {   
-           <tr >
-                 <th>  </th>
-                 <th >@item.AracMarka </th>
-                 <th >@item.AracModel </th>
-                 <th>  </th>
-           </tr>
+        {
+                <tr>
+                    <th>  </th>
+                    <th>@item.AracMarka </th>
+                    <th>@item.AracModel </th>
+                    <th>  </th>
+                </tr>
         }
-       
+
     }
-  
+
     </tbody>
 </table>
 

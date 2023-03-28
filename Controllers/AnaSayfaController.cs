@@ -20,15 +20,15 @@ namespace WebApp.Controllers
         [HttpPost]
         public IActionResult Index(Arac arac)
         {
-           var cx= contex.aracs.ToList();
-            
-            for(int i = 0;i<cx.Count;i++)
+            var cx = contex.aracs.ToList();
+
+            for (int i = 0; i < cx.Count; i++)
             {
                 if (cx[i].AracMarka.Equals(arac.AracMarka))
                 {
                     ViewBag.AracMarka = arac.AracMarka;
-                    
-                    return View("AracListele",cx);
+
+                    return View("AracListele", cx);
                 }
 
             }

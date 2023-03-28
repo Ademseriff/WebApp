@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>CSS Template</title>
+    <title>PROFİLİM</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -83,12 +83,14 @@
         <nav>
             <div style="padding:60px">
                 <h3 style="text-align:center">ARAÇ SATIN AL </h3>
-            <form method="post" asp-action="Index" asp-controller="AnaSayfa">
+
+                <a asp-action="Index" asp-controller="GirdiAracListele"><p><button class="w3-button w3-block w3-green w3-left-align" type="submit"> <i class="fa fa-search w3-margin-right"></i> İLGİLİ SAYFAYI AÇINIZ </button></p></a>
+                @*<form method="post" asp-action="Index" asp-controller="KullaniciGirdi">
                 <p><label><i class="fa fa-car"></i> ARAÇ MARKASI GİRİNİZ</label></p>
                 <input class="w3-input w3-border" type="text" placeholder="Marka İSMİ" form="AracMarka" required>
 
                 <p><button class="w3-button w3-block w3-green w3-left-align" type="submit"><i class="fa fa-search w3-margin-right" ></i> ARAÇLARI ARA </button></p>
-            </form>
+                </form>*@
             </div>
             <div>
                <h3 style="text-align:center">ARAÇLARIM</h3>
@@ -105,7 +107,7 @@
 
             <h1>T.C Kimlik numaranız</h1>
             <p>
-                @Model.KullaniciPara
+                @Model.KullaniciTc
             </p>
             <h1>Şifreniz</h1>
             <p>

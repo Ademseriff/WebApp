@@ -1,0 +1,33 @@
+﻿@using WebApp.Models
+@model List<AracAlindi>
+
+@{
+    ViewData["Title"] = "Admin Kullanıcı Araçlar";
+}
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col"> Id</th>
+            <th scope="col">Araç Marka </th>
+            <th scope="col">Araç Model</th>
+            <th scope="col">Aracın Sahibi</th>
+            <th scope="col">Aracın Sahibi Şifre</th>
+
+        </tr>
+    </thead>
+    <tbody ">
+    @for (int i = 0; i < Model.Count; i++)
+    {
+            <tr>
+                <th scope="row">@Model[i].AracAlindiId</th>
+                <td>@Model[i].AracMarka</td>
+                <td>@Model[i].AracModel</td>
+                <td>@Model[i].KullaniciAd</td>
+                <td>@Model[i].KullaniciSifre</td>
+            </tr>
+
+    }
+
+    </tbody>
+</table>
